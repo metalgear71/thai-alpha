@@ -15,16 +15,14 @@
         body {
             font-family: Arial, sans-serif;
             color: #191c30;
-            line-height: 1.6;
             background-color: #f5f5f3;
+            line-height: 1.6;
         }
 
-        /* Main container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px;
-            position: relative;
+            padding: 0 20px;
         }
 
         /* Brand colors */
@@ -36,57 +34,41 @@
         /* Header */
         header {
             padding: 40px 0;
-            background-color: #f5f5f3;
         }
 
-        .header-logo {
-            padding-left: 40px;
-        }
-
-        .logo-text {
+        .logo {
             font-weight: bold;
             font-size: 32px;
+            margin-left: 120px;
         }
 
-        .logo-text .ta {
+        .logo .ta {
             font-size: 20px;
             color: var(--red);
             margin-right: 8px;
         }
 
-        .logo-text .thai {
+        .logo .thai {
             color: var(--red);
             margin-right: 8px;
         }
 
-        .logo-text .alpha {
+        .logo .alpha {
             color: var(--dark-blue);
         }
 
         /* Hero section */
         .hero {
-            padding: 60px 0 100px;
-            background-color: #f5f5f3;
-            position: relative;
+            padding: 80px 0;
         }
 
         .hero-content {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .hero-text {
-            width: 50%;
-            padding-left: 40px;
-        }
-
-        .hero-image {
-            width: 40%;
-            text-align: center;
+            max-width: 600px;
+            margin-left: 120px;
         }
 
         .hero h1 {
-            font-size: 72px;
+            font-size: 64px;
             line-height: 1.1;
             margin-bottom: 30px;
             color: var(--dark-blue);
@@ -99,20 +81,20 @@
             max-width: 90%;
         }
 
-        .newsletter-signup {
-            margin-top: 30px;
-            min-height: 50px;
+        .newsletter-placeholder {
+            height: 50px;
+            /* Beehiiv embed code will go here */
         }
 
         /* Substack section */
         .substack {
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
             background-color: white;
         }
 
         .substack h2 {
-            font-size: 56px;
+            font-size: 48px;
             margin-bottom: 24px;
             color: var(--dark-blue);
             font-weight: bold;
@@ -126,13 +108,12 @@
 
         /* Second CTA section */
         .cta {
-            background-color: #f5f5f3;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
         }
 
         .cta h2 {
-            font-size: 56px;
+            font-size: 48px;
             margin-bottom: 24px;
             color: var(--dark-blue);
             font-weight: bold;
@@ -160,6 +141,7 @@
         .footer-logo {
             font-weight: bold;
             font-size: 24px;
+            color: white;
         }
 
         .footer-logo .ta {
@@ -176,47 +158,19 @@
             margin-bottom: 8px;
         }
 
-        .footer-social {
+        .social-links {
             display: flex;
-            gap: 16px;
+            gap: 20px;
         }
 
-        .social-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Responsive design */
-        @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-            }
-
-            .hero-text, .hero-image {
-                width: 100%;
-                padding-left: 0;
-            }
-
-            .hero-image {
-                margin-top: 40px;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo, .hero-content {
+                margin-left: 0;
             }
 
             .hero h1 {
-                font-size: 48px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            .header-logo {
-                padding-left: 0;
-            }
-            
-            .hero-text {
-                padding-left: 0;
+                font-size: 36px;
             }
 
             .footer-content {
@@ -224,7 +178,7 @@
                 text-align: center;
             }
 
-            .footer-social {
+            .social-links {
                 margin-top: 30px;
                 justify-content: center;
             }
@@ -235,10 +189,8 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="header-logo">
-                <div class="logo-text">
-                    <span class="ta">τα</span><span class="thai">THAI</span><span class="alpha">ALPHA</span>
-                </div>
+            <div class="logo">
+                <span class="ta">τα</span><span class="thai">THAI</span> <span class="alpha">ALPHA</span>
             </div>
         </div>
     </header>
@@ -247,18 +199,11 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Know Thailand, in seconds.</h1>
-                    <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
-                    
-                    <!-- Empty placeholder for Beehiiv newsletter signup -->
-                    <div class="newsletter-signup">
-                        <!-- Beehiiv embed code will go here -->
-                    </div>
-                </div>
+                <h1>Know Thailand, in seconds.</h1>
+                <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
                 
-                <div class="hero-image">
-                    <!-- Image will be added here -->
+                <div class="newsletter-placeholder">
+                    <!-- Beehiiv embed code will go here -->
                 </div>
             </div>
         </div>
@@ -278,8 +223,7 @@
             <h2>Know Thailand in seconds.</h2>
             <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
             
-            <!-- Empty placeholder for Beehiiv newsletter signup -->
-            <div class="newsletter-signup">
+            <div class="newsletter-placeholder">
                 <!-- Beehiiv embed code will go here -->
             </div>
         </div>
@@ -300,13 +244,12 @@
                     </div>
                 </div>
                 
-                <div class="footer-social">
-                    <!-- Social icons would go here -->
+                <div class="social-links">
+                    <!-- Social links will go here -->
                 </div>
             </div>
         </div>
     </footer>
 </body>
 </html>
-
 
