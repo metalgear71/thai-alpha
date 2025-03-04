@@ -87,7 +87,7 @@
         .hero-content {
             display: flex;
             flex-direction: row;
-            align-items: center;
+            align-items: flex-start; /* Changed from center to align at the top */
             justify-content: space-between;
             position: relative;
             z-index: 2;
@@ -96,14 +96,15 @@
         .hero-text {
             flex-basis: 45%;
             margin-left: 8rem; /* Match your design's positioning */
-            margin-right: 3rem;
+            padding-top: 2rem; /* Added to create better vertical alignment */
         }
 
         .hero-image {
-            flex-basis: 45%;
+            flex-basis: 40%;
             display: flex;
             justify-content: flex-end;
-            margin-right: 2rem;
+            padding-right: 4rem; /* Match the spacing in the design */
+            margin-top: 0; /* Adjust to match phone positioning */
         }
 
         .hero-image img {
@@ -115,7 +116,7 @@
 
         .hero h1 {
             font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
-            font-size: 4rem;
+            font-size: 4.5rem; /* Increased to match design */
             line-height: 1.1;
             margin-bottom: 2rem;
             color: var(--dark-blue);
@@ -133,12 +134,12 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 50%;
+            width: 100%;
             height: 100%;
             background-image: url('thai-pattern.png');
             background-repeat: no-repeat;
-            background-position: top right;
-            background-size: 40% auto;
+            background-position: 85% 20%; /* Adjusted to match exact position in design */
+            background-size: 45% auto; /* Adjusted to match size in design */
             opacity: 0.15;
             z-index: 1;
         }
@@ -146,6 +147,7 @@
         /* Beehiiv integration section */
         .newsletter-signup {
             margin-top: 2rem;
+            min-height: 50px; /* Minimized height */
         }
 
         /* Substack section */
@@ -157,15 +159,15 @@
 
         .substack h2 {
             font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
-            font-size: 2.5rem;
+            font-size: 3.5rem; /* Increased to match design */
             margin-bottom: 1.5rem;
             color: var(--dark-blue);
         }
 
         .substack p {
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             margin: 0 auto 2rem;
-            max-width: 700px;
+            max-width: 800px;
         }
 
         .substack-logo {
@@ -183,15 +185,15 @@
 
         .cta h2 {
             font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             color: var(--dark-blue);
         }
 
         .cta p {
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             margin: 0 auto 2rem;
-            max-width: 700px;
+            max-width: 800px;
         }
 
         .cta .newsletter-signup {
@@ -250,32 +252,6 @@
             color: white;
         }
 
-        /* Email form style */
-        .email-form {
-            display: flex;
-            max-width: 100%;
-        }
-
-        .email-input {
-            flex-grow: 1;
-            padding: 0.75rem 1rem;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px 0 0 4px;
-            border-right: none;
-        }
-
-        .subscribe-button {
-            padding: 0.75rem 1.5rem;
-            background-color: var(--dark-blue);
-            color: white;
-            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
-            font-size: 1rem;
-            border: none;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-        }
-
         /* Responsive design */
         @media (max-width: 1200px) {
             .header-logo, .hero-text {
@@ -284,6 +260,10 @@
             
             .hero h1 {
                 font-size: 3.5rem;
+            }
+            
+            .hero-image {
+                padding-right: 2rem;
             }
         }
 
@@ -311,7 +291,7 @@
             .hero-image {
                 flex-basis: 100%;
                 justify-content: center;
-                margin-right: 0;
+                padding-right: 0;
                 width: 100%;
             }
             
@@ -339,20 +319,6 @@
             
             .hero-image img {
                 max-width: 100%;
-            }
-
-            .email-form {
-                flex-direction: column;
-            }
-
-            .email-input {
-                border-radius: 4px;
-                border-right: 1px solid #ddd;
-                margin-bottom: 0.5rem;
-            }
-
-            .subscribe-button {
-                border-radius: 4px;
             }
 
             .footer-content {
@@ -395,13 +361,9 @@
                     <h1>Know Thailand, in seconds.</h1>
                     <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
                     
-                    <!-- Placeholder for Beehiiv newsletter signup -->
+                    <!-- Empty placeholder for Beehiiv newsletter signup -->
                     <div class="newsletter-signup">
-                        <!-- This will be replaced with Beehiiv embed code -->
-                        <form class="email-form">
-                            <input type="email" class="email-input" placeholder="Your email address">
-                            <button type="submit" class="subscribe-button">Subscribe</button>
-                        </form>
+                        <!-- Beehiiv embed code will go here -->
                     </div>
                 </div>
                 
@@ -432,13 +394,9 @@
             <h2>Know Thailand in seconds.</h2>
             <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
             
-            <!-- Placeholder for Beehiiv newsletter signup -->
+            <!-- Empty placeholder for Beehiiv newsletter signup -->
             <div class="newsletter-signup">
-                <!-- This will be replaced with Beehiiv embed code -->
-                <form class="email-form">
-                    <input type="email" class="email-input" placeholder="Your email address">
-                    <button type="submit" class="subscribe-button">Subscribe</button>
-                </form>
+                <!-- Beehiiv embed code will go here -->
             </div>
         </div>
     </section>
@@ -485,7 +443,7 @@
     </footer>
 
     <!-- Note: Replace newsletter-mobile.png and thai-pattern.png with your actual image files -->
-    <!-- Then replace the email forms with the Beehiiv embed code when ready -->
+    <!-- Then add the Beehiiv embed code in the newsletter-signup divs when ready -->
 </body>
 </html>
 
