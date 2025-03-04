@@ -69,15 +69,15 @@
       display: block;
     }
 
-    /* Hero: text top-left, phone pinned bottom-right */
+    /* Hero: tall area with text near the top-left, phone pinned bottom-right */
     .hero {
-      position: relative; /* for absolute positioning of the phone */
+      position: relative;     /* so we can absolutely position the phone */
       background-color: #f5f5f3;
-      min-height: 600px; /* enough space for the phone to fit */
-      padding: 4rem 2rem;
+      min-height: 600px;      /* adjust if phone is cut off or if you want more/less space */
+      padding: 4rem 2rem;     /* top/left spacing for the text */
     }
     .hero-text {
-      max-width: 600px; /* control text width */
+      max-width: 600px;       /* control text width */
       margin-bottom: 2rem;
     }
     .hero-text h1 {
@@ -95,10 +95,10 @@
     .hero-phone {
       position: absolute;
       bottom: 0;
-      right: 2rem; /* give some padding from edge */
+      right: 2rem; /* adjust as desired for spacing from the right edge */
     }
     .hero-phone img {
-      max-width: 250px; /* adjust as needed */
+      max-width: 250px; /* adjust if phone is too big/small */
       height: auto;
       display: block;
     }
@@ -118,10 +118,6 @@
       font-size: 1.125rem;
       margin: 0 auto 2rem;
       max-width: 700px;
-    }
-    .substack p a {
-      color: var(--dark-blue);
-      text-decoration: underline;
     }
     .substack-logo {
       margin-top: 1rem;
@@ -212,7 +208,7 @@
   <header>
     <div class="container">
       <div class="header-logo">
-        <!-- Only the logo image, no extra text like “ta” -->
+        <!-- Only the logo image -->
         <img src="images/thai alpha logo2.png" alt="Thai Alpha Logo" />
       </div>
     </div>
@@ -220,13 +216,10 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <!-- Text at the top-left -->
     <div class="hero-text">
       <h1>Know Thailand, in seconds.</h1>
       <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
-      <!-- Beehiiv newsletter signup can be placed here once ready -->
     </div>
-    <!-- Phone pinned to bottom-right -->
     <div class="hero-phone">
       <img src="images/phonepic.png" alt="Phone Screenshot" />
     </div>
@@ -236,10 +229,7 @@
   <section class="substack">
     <div class="container">
       <h2>Check out our Substack</h2>
-      <p>
-        Helpful English guides to the Thai economic landscape, economy, startups, and more.
-        <a href="https://substack.com/@thaialpha" target="_blank">Click here to read!</a>
-      </p>
+      <p>Helpful English guides to the Thai economic landscape, economy, startups, and more.</p>
       <div class="substack-logo">
         <a href="https://substack.com/@thaialpha" target="_blank" aria-label="Substack">
           <img src="images/substack2.png" alt="Substack Logo" />
@@ -253,7 +243,6 @@
     <div class="container">
       <h2>Know Thailand in seconds.</h2>
       <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
-      <!-- Beehiiv newsletter signup can be placed here once ready -->
     </div>
   </section>
 
@@ -287,6 +276,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
