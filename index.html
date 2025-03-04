@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thai Alpha | Know Thailand, in seconds.</title>
   <style>
-    /* Reset */
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Custom Fonts */
+    /* FONTS (must exist in /fonts folder) */
     @font-face {
       font-family: 'AktivGrotesk-Bold';
       src: url('fonts/AktivGrotesk-Bold.woff2') format('woff2');
@@ -42,7 +42,7 @@
       font-display: swap;
     }
 
-    /* Base Styles */
+    /* BASE STYLES */
     body {
       font-family: 'NBInternationalPro', 'HelveticaNeue', Arial, sans-serif;
       color: #191c30;
@@ -59,7 +59,7 @@
       padding: 0 2rem;
     }
 
-    /* Header */
+    /* HEADER */
     header {
       background-color: #f5f5f3;
       padding: 2rem 0;
@@ -69,15 +69,15 @@
       display: block;
     }
 
-    /* Hero: tall area with text near the top-left, phone pinned bottom-right */
+    /* HERO SECTION: text top-left, phone pinned bottom-right */
     .hero {
-      position: relative;     /* so we can absolutely position the phone */
+      position: relative;
       background-color: #f5f5f3;
-      min-height: 600px;      /* adjust if phone is cut off or if you want more/less space */
-      padding: 4rem 2rem;     /* top/left spacing for the text */
+      min-height: 600px; /* Adjust if phone is cut off or there's too much space */
+      padding: 4rem 2rem;
     }
     .hero-text {
-      max-width: 600px;       /* control text width */
+      max-width: 600px;
       margin-bottom: 2rem;
     }
     .hero-text h1 {
@@ -91,19 +91,18 @@
       font-size: 1.125rem;
       margin-bottom: 2rem;
     }
-    /* Phone pinned to bottom-right */
     .hero-phone {
       position: absolute;
       bottom: 0;
-      right: 2rem; /* adjust as desired for spacing from the right edge */
+      right: 2rem; /* Adjust for horizontal spacing */
     }
     .hero-phone img {
-      max-width: 250px; /* adjust if phone is too big/small */
+      max-width: 250px;
       height: auto;
       display: block;
     }
 
-    /* Substack Section */
+    /* SUBSTACK SECTION */
     .substack {
       text-align: center;
       padding: 4rem 0;
@@ -126,7 +125,7 @@
       max-width: 50px;
     }
 
-    /* Second CTA */
+    /* SECOND CTA */
     .cta {
       text-align: center;
       background-color: #f5f5f3;
@@ -144,7 +143,7 @@
       max-width: 700px;
     }
 
-    /* Footer */
+    /* FOOTER */
     footer {
       background-color: var(--dark-blue);
       color: white;
@@ -176,13 +175,13 @@
       height: 24px;
     }
 
-    /* Responsive */
+    /* RESPONSIVE */
     @media (max-width: 991px) {
       .hero-text h1 {
         font-size: 3rem;
       }
       .hero {
-        min-height: 500px; /* reduce if phone is smaller */
+        min-height: 500px;
       }
     }
     @media (max-width: 767px) {
@@ -204,41 +203,42 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
+
+  <!-- HEADER -->
   <header>
     <div class="container">
       <div class="header-logo">
-        <!-- Only the logo image -->
-        <img src="images/thai alpha logo2.png" alt="Thai Alpha Logo" />
+        <!-- Logo image only -->
+        <img src="images/thai alpha logo2.png" alt="Thai Alpha Logo">
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
       <h1>Know Thailand, in seconds.</h1>
       <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
     </div>
     <div class="hero-phone">
-      <img src="images/phonepic.png" alt="Phone Screenshot" />
+      <img src="images/phonepic.png" alt="Phone Screenshot">
     </div>
   </section>
 
-  <!-- Substack Section -->
+  <!-- SUBSTACK SECTION -->
   <section class="substack">
     <div class="container">
       <h2>Check out our Substack</h2>
       <p>Helpful English guides to the Thai economic landscape, economy, startups, and more.</p>
       <div class="substack-logo">
         <a href="https://substack.com/@thaialpha" target="_blank" aria-label="Substack">
-          <img src="images/substack2.png" alt="Substack Logo" />
+          <img src="images/substack2.png" alt="Substack Logo">
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Second CTA -->
+  <!-- SECOND CTA -->
   <section class="cta">
     <div class="container">
       <h2>Know Thailand in seconds.</h2>
@@ -246,13 +246,13 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-left">
           <div class="footer-logo">
-            <img src="images/thai alpha logo white.png" alt="Thai Alpha White Logo" />
+            <img src="images/thai alpha logo white.png" alt="Thai Alpha White Logo">
           </div>
           <div class="footer-info">
             <p>Thai Alpha || Bangkok || Singapore</p>
@@ -262,18 +262,19 @@
         </div>
         <div class="footer-social">
           <a href="https://substack.com/@thaialpha" target="_blank" aria-label="Substack">
-            <img src="images/substack.png" alt="Substack Icon" />
+            <img src="images/substack.png" alt="Substack Icon">
           </a>
           <a href="https://twitter.com/thaialphahq" target="_blank" aria-label="Twitter">
-            <img src="images/twitter.png" alt="Twitter Icon" />
+            <img src="images/twitter.png" alt="Twitter Icon">
           </a>
           <a href="https://linkedin.com/company/thai-alpha" target="_blank" aria-label="LinkedIn">
-            <img src="images/linkedin.png" alt="LinkedIn Icon" />
+            <img src="images/linkedin.png" alt="LinkedIn Icon">
           </a>
         </div>
       </div>
     </div>
   </footer>
+
 </body>
 </html>
 
