@@ -1,419 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thai Alpha | Know Thailand, in seconds.</title>
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Alpha | Know Thailand, in seconds.</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Custom Fonts */
-    @font-face {
-      font-family: 'AktivGrotesk-Bold';
-      src: url('fonts/AktivGrotesk-Bold.woff2') format('woff2');
-      font-weight: bold;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'HelveticaNeue';
-      src: url('fonts/HelveticaNeue-bold.woff2') format('woff2');
-      font-weight: bold;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'HelveticaNeue';
-      src: url('fonts/helveticaneue-medium.woff2') format('woff2');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'NBInternationalPro';
-      src: url('fonts/NB-International-Pro-Light.woff') format('woff');
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-    }
+        body {
+            font-family: 'Arial', sans-serif; /* Fallback font until AktivGrotesk is loaded */
+            color: #191c30; /* Dark blue brand color */
+            line-height: 1.6;
+            background-color: #f5f5f3;
+        }
 
-    /* Base Styles */
-    body {
-      font-family: 'NBInternationalPro', 'HelveticaNeue', Arial, sans-serif;
-      color: #191c30;
-      line-height: 1.6;
-      background-color: #fff;
-    }
-    :root {
-      --red: #ac1e22;
-      --dark-blue: #191c30;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+        /* Custom font */
+        @font-face {
+            font-family: 'AktivGrotesk-Bold';
+            src: url('path-to-your-font/AktivGrotesk-Bold.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
 
-    /* Header */
-    header {
-      background-color: #f5f5f3;
-      padding: 2rem 0;
-    }
-    .header-logo img {
-      max-height: 50px;
-    }
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
 
-    /* Hero Section */
-    .hero {
-      background-color: #f5f5f3;
-      padding: 4rem 0 6rem;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-    
-    /* Text content positioning */
-    .hero-left {
-      max-width: 50%;
-      margin-right: 2rem;
-      position: relative;
-      z-index: 3;
-    }
-    
-    .hero-left h1 {
-      font-family: 'AktivGrotesk-Bold', Arial, sans-serif;
-      font-size: 4rem;
-      line-height: 1.1;
-      color: var(--dark-blue);
-      margin-bottom: 2rem;
-    }
-    
-    .hero-left p {
-      font-size: 1.125rem;
-      margin-bottom: 2rem;
-      max-width: 500px;
-    }
-    
-    /* Pattern background positioning */
-    .hero-pattern {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 45%;
-      height: 100%;
-      z-index: 1;
-      overflow: hidden;
-    }
-    
-    .hero-pattern img {
-      width: 100%;
-      height: auto;
-      opacity: 0.2;
-    }
-    
-    /* Phone positioning */
-    .hero-phone {
-      position: absolute;
-      top: 55%;
-      right: 5%;
-      transform: translateY(-50%);
-      z-index: 2;
-      max-width: 300px;
-    }
-    
-    .hero-phone img {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
+        /* Brand colors */
+        :root {
+            --red: #ac1e22;
+            --dark-blue: #191c30;
+        }
 
-    /* Dark input area */
-    .dark-input {
-      background-color: var(--dark-blue);
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
-      width: 250px;
-      margin-top: 20px;
-    }
+        /* Header */
+        header {
+            padding: 2.5rem 0;
+            background-color: #f5f5f3;
+        }
 
-    /* Substack Section */
-    .substack {
-      text-align: center;
-      padding: 4rem 0;
-    }
-    
-    .substack h2 {
-      font-family: 'AktivGrotesk-Bold', Arial, sans-serif;
-      font-size: 3rem;
-      color: var(--dark-blue);
-      margin-bottom: 1rem;
-    }
-    
-    .substack p {
-      font-size: 1.125rem;
-      margin: 0 auto 2rem;
-      max-width: 700px;
-    }
-    
-    .substack p a {
-      color: var(--dark-blue);
-      text-decoration: underline;
-    }
-    
-    .substack-logo {
-      margin-top: 1.5rem;
-    }
-    
-    .substack-logo img {
-      max-width: 50px;
-    }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            margin-left: 8rem; /* Adjust this to match your design's positioning */
+        }
 
-    /* Second CTA */
-    .cta {
-      text-align: center;
-      background-color: #f5f5f3;
-      padding: 4rem 0;
-    }
-    
-    .cta h2 {
-      font-family: 'AktivGrotesk-Bold', Arial, sans-serif;
-      font-size: 3rem;
-      color: var(--dark-blue);
-      margin-bottom: 1rem;
-    }
-    
-    .cta p {
-      font-size: 1.125rem;
-      margin: 0 auto 2rem;
-      max-width: 700px;
-    }
-    
-    .cta .dark-input {
-      margin: 2rem auto;
-    }
+        .logo-text {
+            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+        }
 
-    /* Footer */
-    footer {
-      background-color: var(--dark-blue);
-      color: white;
-      padding: 3rem 0;
-    }
-    
-    .footer-content {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-    
-    .footer-left {
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .footer-logo img {
-      max-height: 40px;
-    }
-    
-    .footer-info {
-      margin-top: 1rem;
-      font-size: 0.875rem;
-      line-height: 1.5;
-    }
-    
-    .footer-right {
-      display: flex;
-      align-items: center;
-    }
-    
-    .footer-social {
-      display: flex;
-      gap: 1rem;
-    }
-    
-    .footer-social img {
-      width: 24px;
-      height: 24px;
-    }
+        .logo-text .ta {
+            font-size: 1.25rem;
+            color: var(--red);
+            margin-right: 0.5rem;
+        }
 
-    /* Responsive */
-    @media (max-width: 1100px) {
-      .hero-left h1 {
-        font-size: 3.5rem;
-      }
-      
-      .hero-phone {
-        right: 2%;
-        max-width: 250px;
-      }
-    }
-    
-    @media (max-width: 991px) {
-      .hero-left h1 {
-        font-size: 3rem;
-      }
-      
-      .hero-left {
-        max-width: 60%;
-      }
-      
-      .hero-phone {
-        max-width: 220px;
-      }
-    }
-    
-    @media (max-width: 767px) {
-      .container {
-        padding: 0 1.5rem;
-      }
-      
-      .hero {
-        padding: 3rem 0 5rem;
-      }
-      
-      .hero-left {
-        max-width: 100%;
-      }
-      
-      .hero-left h1 {
-        font-size: 2.5rem;
-      }
-      
-      .hero-pattern {
-        opacity: 0.1;
-        width: 100%;
-      }
-      
-      .hero-phone {
-        top: auto;
-        bottom: -80px;
-        right: 50%;
-        transform: translateX(50%);
-        max-width: 200px;
-      }
-      
-      .footer-content {
-        flex-direction: column;
-        gap: 2rem;
-      }
-      
-      .footer-right {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero-left h1 {
-        font-size: 2rem;
-      }
-      
-      .dark-input {
-        width: 100%;
-      }
-    }
-  </style>
+        .logo-text .thai {
+            color: var(--red);
+            margin-right: 0.5rem;
+        }
+
+        .logo-text .alpha {
+            color: var(--dark-blue);
+        }
+
+        /* Hero section */
+        .hero {
+            position: relative;
+            background-color: #f5f5f3;
+            padding: 3rem 0 6rem;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex-basis: 45%;
+            margin-left: 8rem; /* Match your design's positioning */
+            margin-right: 3rem;
+        }
+
+        .hero-image {
+            flex-basis: 45%;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 2rem;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--dark-blue);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 90%;
+            line-height: 1.5;
+        }
+
+        /* Thai pattern background - positioned precisely */
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('thai-pattern.png');
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-size: 40% auto;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        /* Beehiiv integration section */
+        .newsletter-signup {
+            margin-top: 2rem;
+        }
+
+        /* Substack section */
+        .substack {
+            padding: 4rem 0;
+            text-align: center;
+            background-color: white;
+        }
+
+        .substack h2 {
+            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .substack p {
+            font-size: 1.125rem;
+            margin: 0 auto 2rem;
+            max-width: 700px;
+        }
+
+        .substack-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Second CTA section */
+        .cta {
+            background-color: #f5f5f3;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta h2 {
+            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .cta p {
+            font-size: 1.125rem;
+            margin: 0 auto 2rem;
+            max-width: 700px;
+        }
+
+        .cta .newsletter-signup {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo-text {
+            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .footer-logo-text .ta {
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .footer-info {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        /* Email form style */
+        .email-form {
+            display: flex;
+            max-width: 100%;
+        }
+
+        .email-input {
+            flex-grow: 1;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            border-right: none;
+        }
+
+        .subscribe-button {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--dark-blue);
+            color: white;
+            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .header-logo, .hero-text {
+                margin-left: 4rem;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .header-logo, .hero-text {
+                margin-left: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-text {
+                flex-basis: 100%;
+                margin-right: 0;
+                margin-bottom: 3rem;
+                max-width: 80%;
+            }
+
+            .hero-image {
+                flex-basis: 100%;
+                justify-content: center;
+                margin-right: 0;
+                width: 100%;
+            }
+            
+            .hero-image img {
+                max-width: 80%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .header-logo, .hero-text {
+                margin-left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+            }
+            
+            .hero-image img {
+                max-width: 100%;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-input {
+                border-radius: 4px;
+                border-right: 1px solid #ddd;
+                margin-bottom: 0.5rem;
+            }
+
+            .subscribe-button {
+                border-radius: 4px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="header-logo">
-        <img src="images/thai alpha logo2.png" alt="Thai Alpha Logo" />
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <!-- Pattern background -->
-    <div class="hero-pattern">
-      <img src="images/artphone.png" alt="Thai Pattern" />
-    </div>
-    
-    <div class="container">
-      <div class="hero-content">
-        <!-- Left Column: Text -->
-        <div class="hero-left">
-          <h1>Know Thailand, in seconds.</h1>
-          <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
-          <!-- Placeholder for Beehiiv -->
-          <div class="dark-input"></div>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-logo">
+                <div class="logo-text">
+                    <span class="ta">τα</span> <span class="thai">THAI</span> <span class="alpha">ALPHA</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    
-    <!-- Phone image -->
-    <div class="hero-phone">
-      <img src="images/phonepic.png" alt="Phone Screenshot" />
-    </div>
-  </section>
+    </header>
 
-  <!-- Substack Section -->
-  <section class="substack">
-    <div class="container">
-      <h2>Check out our Substack</h2>
-      <p>
-        Helpful English guides to Thai economic landscape, economy, startups, some bullshit.
-      </p>
-      <div class="substack-logo">
-        <!-- Substack icon linking to Substack -->
-        <a href="https://substack.com/@thaialpha" target="_blank" aria-label="Substack">
-          <img src="images/substack2.png" alt="Substack Logo" />
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Second CTA -->
-  <section class="cta">
-    <div class="container">
-      <h2>Know Thailand in seconds.</h2>
-      <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
-      <!-- Placeholder for Beehiiv -->
-      <div class="dark-input"></div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-left">
-          <div class="footer-logo">
-            <img src="images/thai alpha logo white.png" alt="Thai Alpha White Logo" />
-          </div>
-          <div class="footer-info">
-            <p>Thai Alpha || Bangkok || Singapore</p>
-            <p>© Copyright 2025</p>
-            <p>Built Proudly In Thailand</p>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Thai pattern background -->
+        <div class="background-pattern"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Know Thailand, in seconds.</h1>
+                    <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
+                    
+                    <!-- Placeholder for Beehiiv newsletter signup -->
+                    <div class="newsletter-signup">
+                        <!-- This will be replaced with Beehiiv embed code -->
+                        <form class="email-form">
+                            <input type="email" class="email-input" placeholder="Your email address">
+                            <button type="submit" class="subscribe-button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="newsletter-mobile.png" alt="Thai Alpha newsletter on mobile phone showing news stories about Thai economy and startups" />
+                </div>
+            </div>
         </div>
-        <div class="footer-right">
-          <div class="footer-social">
-            <a href="https://substack.com/@thaialpha" target="_blank" aria-label="Substack">
-              <img src="images/substack.png" alt="Substack Icon" />
-            </a>
-            <a href="https://twitter.com/thaialphahq" target="_blank" aria-label="Twitter">
-              <img src="images/twitter.png" alt="Twitter Icon" />
-            </a>
-            <a href="https://linkedin.com/company/thai-alpha" target="_blank" aria-label="LinkedIn">
-              <img src="images/linkedin.png" alt="LinkedIn Icon" />
-            </a>
-          </div>
+    </section>
+
+    <!-- Substack Section -->
+    <section class="substack">
+        <div class="container">
+            <h2>Check out our Substack</h2>
+            <p>Helpful English guides to Thai economic landscape, economy, startups, some bullshit.</p>
+            <div class="substack-logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="4" fill="#191c30"/>
+                    <path d="M12 13H28M12 19H28M12 25H20" stroke="white" stroke-width="2"/>
+                </svg>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </section>
+
+    <!-- Second CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Know Thailand in seconds.</h2>
+            <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
+            
+            <!-- Placeholder for Beehiiv newsletter signup -->
+            <div class="newsletter-signup">
+                <!-- This will be replaced with Beehiiv embed code -->
+                <form class="email-form">
+                    <input type="email" class="email-input" placeholder="Your email address">
+                    <button type="submit" class="subscribe-button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <div class="footer-logo-text">
+                            <span class="ta">τα</span> THAI ALPHA
+                        </div>
+                    </div>
+                    <div class="footer-info">
+                        <p>Thai Alpha || Bangkok || Singapore</p>
+                        <p>© Copyright 2025</p>
+                        <p>Built Proudly In Thailand</p>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://thaialpha.substack.com" aria-label="Substack">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" rx="4" fill="white"/>
+                            <path d="M6 8H18M6 12H18M6 16H12" stroke="#191c30" stroke-width="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/xthaialpha" aria-label="Twitter/X">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" fill="white"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/thai-alpha" aria-label="LinkedIn">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" fill="white"/>
+                            <rect x="2" y="9" width="4" height="12" fill="white"/>
+                            <circle cx="4" cy="4" r="2" fill="white"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Note: Replace newsletter-mobile.png and thai-pattern.png with your actual image files -->
+    <!-- Then replace the email forms with the Beehiiv embed code when ready -->
 </body>
 </html>
 
