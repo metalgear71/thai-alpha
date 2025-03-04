@@ -68,63 +68,82 @@
       max-height: 50px;
     }
 
-    /* Hero Section
-       - Two columns: text on the left, images on the right
-       - The pattern is top-right, the phone is bottom-right
-    */
+    /* Hero Section */
     .hero {
       background-color: #f5f5f3;
-      padding: 4rem 0;
-      position: relative; /* So we can absolutely position images */
-      min-height: 600px;  /* Enough space for the phone image */
+      padding: 4rem 0 6rem;
+      position: relative;
+      overflow: hidden;
     }
+    
     .hero-content {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
+      position: relative;
+      z-index: 2;
     }
+    
+    /* Text content positioning */
     .hero-left {
-      flex: 1;
+      max-width: 50%;
       margin-right: 2rem;
-      z-index: 2; /* Ensure text is above the pattern if they overlap */
+      position: relative;
+      z-index: 3;
     }
+    
     .hero-left h1 {
       font-family: 'AktivGrotesk-Bold', Arial, sans-serif;
-      font-size: 3.5rem;
+      font-size: 4rem;
       line-height: 1.1;
       color: var(--dark-blue);
       margin-bottom: 2rem;
     }
+    
     .hero-left p {
       font-size: 1.125rem;
       margin-bottom: 2rem;
-      max-width: 90%;
+      max-width: 500px;
     }
-
-    .hero-right {
-      flex: 1;
-      position: relative;
-      min-height: 400px; /* space for both images */
-    }
-    /* The pattern: top-right */
+    
+    /* Pattern background positioning */
     .hero-pattern {
       position: absolute;
       top: 0;
       right: 0;
+      width: 45%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
     }
+    
     .hero-pattern img {
-      max-width: 300px; /* Adjust as needed */
+      width: 100%;
       height: auto;
+      opacity: 0.2;
     }
-    /* The phone: bottom-right */
+    
+    /* Phone positioning */
     .hero-phone {
       position: absolute;
-      bottom: 0;
-      right: 0;
+      top: 55%;
+      right: 5%;
+      transform: translateY(-50%);
+      z-index: 2;
+      max-width: 300px;
     }
+    
     .hero-phone img {
-      max-width: 220px; /* Adjust as needed */
+      width: 100%;
       height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Dark input area */
+    .dark-input {
+      background-color: var(--dark-blue);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      width: 250px;
+      margin-top: 20px;
     }
 
     /* Substack Section */
@@ -132,24 +151,29 @@
       text-align: center;
       padding: 4rem 0;
     }
+    
     .substack h2 {
       font-family: 'AktivGrotesk-Bold', Arial, sans-serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--dark-blue);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
+    
     .substack p {
       font-size: 1.125rem;
       margin: 0 auto 2rem;
       max-width: 700px;
     }
+    
     .substack p a {
       color: var(--dark-blue);
       text-decoration: underline;
     }
+    
     .substack-logo {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
+    
     .substack-logo img {
       max-width: 50px;
     }
@@ -160,16 +184,22 @@
       background-color: #f5f5f3;
       padding: 4rem 0;
     }
+    
     .cta h2 {
       font-family: 'AktivGrotesk-Bold', Arial, sans-serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--dark-blue);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
+    
     .cta p {
       font-size: 1.125rem;
       margin: 0 auto 2rem;
       max-width: 700px;
+    }
+    
+    .cta .dark-input {
+      margin: 2rem auto;
     }
 
     /* Footer */
@@ -178,64 +208,117 @@
       color: white;
       padding: 3rem 0;
     }
+    
     .footer-content {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
     }
+    
     .footer-left {
       display: flex;
       flex-direction: column;
     }
+    
     .footer-logo img {
       max-height: 40px;
     }
+    
     .footer-info {
       margin-top: 1rem;
       font-size: 0.875rem;
+      line-height: 1.5;
     }
+    
+    .footer-right {
+      display: flex;
+      align-items: center;
+    }
+    
     .footer-social {
       display: flex;
       gap: 1rem;
     }
+    
     .footer-social img {
       width: 24px;
       height: 24px;
     }
 
     /* Responsive */
+    @media (max-width: 1100px) {
+      .hero-left h1 {
+        font-size: 3.5rem;
+      }
+      
+      .hero-phone {
+        right: 2%;
+        max-width: 250px;
+      }
+    }
+    
     @media (max-width: 991px) {
       .hero-left h1 {
         font-size: 3rem;
       }
-      .hero-content {
-        flex-direction: column;
-      }
+      
       .hero-left {
-        margin-right: 0;
-        margin-bottom: 2rem;
+        max-width: 60%;
       }
-      .hero-right {
-        min-height: 300px;
+      
+      .hero-phone {
+        max-width: 220px;
       }
     }
+    
     @media (max-width: 767px) {
       .container {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
       }
+      
+      .hero {
+        padding: 3rem 0 5rem;
+      }
+      
+      .hero-left {
+        max-width: 100%;
+      }
+      
       .hero-left h1 {
         font-size: 2.5rem;
       }
-      .hero-pattern img {
+      
+      .hero-pattern {
+        opacity: 0.1;
+        width: 100%;
+      }
+      
+      .hero-phone {
+        top: auto;
+        bottom: -80px;
+        right: 50%;
+        transform: translateX(50%);
         max-width: 200px;
       }
-      .hero-phone img {
-        max-width: 180px;
-      }
+      
       .footer-content {
         flex-direction: column;
         gap: 2rem;
-        text-align: center;
+      }
+      
+      .footer-right {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-left h1 {
+        font-size: 2rem;
+      }
+      
+      .dark-input {
+        width: 100%;
       }
     }
   </style>
@@ -252,22 +335,26 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container hero-content">
-      <!-- Left Column: Text -->
-      <div class="hero-left">
-        <h1>Know Thailand, in seconds.</h1>
-        <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
-        <!-- Beehiiv newsletter signup will go here once ready -->
-      </div>
-      <!-- Right Column: Pattern (top) + Phone (bottom) -->
-      <div class="hero-right">
-        <div class="hero-pattern">
-          <img src="images/artphone.png" alt="Art Pattern" />
+    <!-- Pattern background -->
+    <div class="hero-pattern">
+      <img src="images/artphone.png" alt="Thai Pattern" />
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <!-- Left Column: Text -->
+        <div class="hero-left">
+          <h1>Know Thailand, in seconds.</h1>
+          <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
+          <!-- Placeholder for Beehiiv -->
+          <div class="dark-input"></div>
         </div>
-        <div class="hero-phone">
-          <img src="images/phonepic.png" alt="Phone Screenshot" />
-        </div>
       </div>
+    </div>
+    
+    <!-- Phone image -->
+    <div class="hero-phone">
+      <img src="images/phonepic.png" alt="Phone Screenshot" />
     </div>
   </section>
 
@@ -276,11 +363,10 @@
     <div class="container">
       <h2>Check out our Substack</h2>
       <p>
-        Helpful English guides to the Thai economic landscape, economy, startups, and more. 
-        <a href="https://substack.com/@thaialpha" target="_blank">Click here to read!</a>
+        Helpful English guides to Thai economic landscape, economy, startups, some bullshit.
       </p>
       <div class="substack-logo">
-        <!-- Substack icon linking to the same URL -->
+        <!-- Substack icon linking to Substack -->
         <a href="https://substack.com/@thaialpha" target="_blank" aria-label="Substack">
           <img src="images/substack2.png" alt="Substack Logo" />
         </a>
@@ -293,7 +379,8 @@
     <div class="container">
       <h2>Know Thailand in seconds.</h2>
       <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
-      <!-- Beehiiv newsletter signup can be placed here once ready -->
+      <!-- Placeholder for Beehiiv -->
+      <div class="dark-input"></div>
     </div>
   </section>
 
@@ -311,16 +398,18 @@
             <p>Built Proudly In Thailand</p>
           </div>
         </div>
-        <div class="footer-social">
-          <a href="https://substack.com/@thaialpha" target="_blank" aria-label="Substack">
-            <img src="images/substack.png" alt="Substack Icon" />
-          </a>
-          <a href="https://twitter.com/thaialphahq" target="_blank" aria-label="Twitter">
-            <img src="images/twitter.png" alt="Twitter Icon" />
-          </a>
-          <a href="https://linkedin.com/company/thai-alpha" target="_blank" aria-label="LinkedIn">
-            <img src="images/linkedin.png" alt="LinkedIn Icon" />
-          </a>
+        <div class="footer-right">
+          <div class="footer-social">
+            <a href="https://substack.com/@thaialpha" target="_blank" aria-label="Substack">
+              <img src="images/substack.png" alt="Substack Icon" />
+            </a>
+            <a href="https://twitter.com/thaialphahq" target="_blank" aria-label="Twitter">
+              <img src="images/twitter.png" alt="Twitter Icon" />
+            </a>
+            <a href="https://linkedin.com/company/thai-alpha" target="_blank" aria-label="LinkedIn">
+              <img src="images/linkedin.png" alt="LinkedIn Icon" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
