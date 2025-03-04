@@ -68,58 +68,62 @@
       max-height: 50px;
     }
 
-    /* Hero
-       - A large container with position: relative so we can absolutely position images.
-       - The pattern (artphone.png) at top-right
-       - The phone (phonepic.png) at bottom-right
+    /* Hero Section
+       - Two columns: text on the left, images on the right
+       - The pattern is top-right, the phone is bottom-right
     */
     .hero {
-      position: relative;
       background-color: #f5f5f3;
-      min-height: 600px; /* Adjust as needed to fit your phone image */
-      overflow: hidden;  /* Ensures any overflow is hidden */
+      padding: 4rem 0;
+      position: relative; /* So we can absolutely position images */
+      min-height: 600px;  /* Enough space for the phone image */
     }
     .hero-content {
-      position: relative;
-      z-index: 3; /* Above the background images */
-      padding: 4rem 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
     }
-    .hero-text h1 {
+    .hero-left {
+      flex: 1;
+      margin-right: 2rem;
+      z-index: 2; /* Ensure text is above the pattern if they overlap */
+    }
+    .hero-left h1 {
       font-family: 'AktivGrotesk-Bold', Arial, sans-serif;
       font-size: 3.5rem;
       line-height: 1.1;
       color: var(--dark-blue);
       margin-bottom: 2rem;
     }
-    .hero-text p {
+    .hero-left p {
       font-size: 1.125rem;
       margin-bottom: 2rem;
       max-width: 90%;
     }
 
-    /* Pattern at top-right */
+    .hero-right {
+      flex: 1;
+      position: relative;
+      min-height: 400px; /* space for both images */
+    }
+    /* The pattern: top-right */
     .hero-pattern {
       position: absolute;
       top: 0;
       right: 0;
-      z-index: 1;
     }
     .hero-pattern img {
-      display: block;
-      max-width: 400px; /* Adjust to your liking */
+      max-width: 300px; /* Adjust as needed */
       height: auto;
     }
-
-    /* Phone at bottom-right */
+    /* The phone: bottom-right */
     .hero-phone {
       position: absolute;
       bottom: 0;
       right: 0;
-      z-index: 2; /* On top of pattern, but behind text container */
     }
     .hero-phone img {
-      display: block;
-      max-width: 250px; /* Adjust to your liking */
+      max-width: 220px; /* Adjust as needed */
       height: auto;
     }
 
@@ -138,6 +142,13 @@
       font-size: 1.125rem;
       margin: 0 auto 2rem;
       max-width: 700px;
+    }
+    .substack p a {
+      color: var(--dark-blue);
+      text-decoration: underline;
+    }
+    .substack-logo {
+      margin-top: 1rem;
     }
     .substack-logo img {
       max-width: 50px;
@@ -194,23 +205,32 @@
 
     /* Responsive */
     @media (max-width: 991px) {
-      .hero-text h1 {
+      .hero-left h1 {
         font-size: 3rem;
       }
       .hero-content {
-        padding: 2rem 0;
+        flex-direction: column;
+      }
+      .hero-left {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+      .hero-right {
+        min-height: 300px;
       }
     }
     @media (max-width: 767px) {
       .container {
         padding: 0 1rem;
       }
-      .hero {
-        min-height: 400px; /* shorter for mobile if needed */
+      .hero-left h1 {
+        font-size: 2.5rem;
       }
-      .hero-pattern img,
-      .hero-phone img {
+      .hero-pattern img {
         max-width: 200px;
+      }
+      .hero-phone img {
+        max-width: 180px;
       }
       .footer-content {
         flex-direction: column;
@@ -232,19 +252,21 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <!-- Pattern at the top-right -->
-    <div class="hero-pattern">
-      <img src="images/artphone.png" alt="Art Pattern" />
-    </div>
-    <!-- Phone at the bottom-right -->
-    <div class="hero-phone">
-      <img src="images/phonepic.png" alt="Phone Screenshot" />
-    </div>
     <div class="container hero-content">
-      <div class="hero-text">
+      <!-- Left Column: Text -->
+      <div class="hero-left">
         <h1>Know Thailand, in seconds.</h1>
         <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
-        <!-- Beehiiv newsletter signup can be placed here once ready -->
+        <!-- Beehiiv newsletter signup will go here once ready -->
+      </div>
+      <!-- Right Column: Pattern (top) + Phone (bottom) -->
+      <div class="hero-right">
+        <div class="hero-pattern">
+          <img src="images/artphone.png" alt="Art Pattern" />
+        </div>
+        <div class="hero-phone">
+          <img src="images/phonepic.png" alt="Phone Screenshot" />
+        </div>
       </div>
     </div>
   </section>
@@ -253,9 +275,12 @@
   <section class="substack">
     <div class="container">
       <h2>Check out our Substack</h2>
-      <p>Helpful English guides to the Thai economic landscape, startups, and more.</p>
+      <p>
+        Helpful English guides to the Thai economic landscape, economy, startups, and more. 
+        <a href="https://substack.com/@thaialpha" target="_blank">Click here to read!</a>
+      </p>
       <div class="substack-logo">
-        <!-- Clicking the icon will link to Substack -->
+        <!-- Substack icon linking to the same URL -->
         <a href="https://substack.com/@thaialpha" target="_blank" aria-label="Substack">
           <img src="images/substack2.png" alt="Substack Logo" />
         </a>
@@ -287,7 +312,6 @@
           </div>
         </div>
         <div class="footer-social">
-          <!-- Updated Substack link -->
           <a href="https://substack.com/@thaialpha" target="_blank" aria-label="Substack">
             <img src="images/substack.png" alt="Substack Icon" />
           </a>
@@ -303,6 +327,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
