@@ -57,12 +57,16 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
+      position: relative;
     }
 
     /* HEADER */
     header {
       background-color: #f5f5f3;
       padding: 2rem 0;
+    }
+    .header-logo {
+      padding-left: 6rem; /* Added consistent left padding */
     }
     .header-logo img {
       max-height: 50px;
@@ -74,30 +78,34 @@
       position: relative;
       background-color: #f5f5f3;
       min-height: 600px; /* Adjust if phone is cut off or there's too much space */
-      padding: 4rem 2rem;
+      padding: 4rem 0; /* Removed horizontal padding to use container */
+      overflow: hidden; /* Prevent overflow */
     }
     .hero-text {
       max-width: 600px;
       margin-bottom: 2rem;
+      padding-left: 8rem; /* Added consistent left padding */
     }
     .hero-text h1 {
       font-family: 'AktivGrotesk-Bold', Arial, sans-serif;
-      font-size: 3.5rem;
+      font-size: 4rem; /* Increased size */
       line-height: 1.1;
       color: var(--dark-blue);
       margin-bottom: 1.5rem;
     }
     .hero-text p {
-      font-size: 1.125rem;
+      font-size: 1.25rem; /* Slightly increased */
       margin-bottom: 2rem;
+      max-width: 90%;
     }
     .hero-phone {
       position: absolute;
       bottom: 0;
-      right: 2rem; /* Adjust for horizontal spacing */
+      right: 8%; /* Percentage-based positioning */
+      z-index: 2; /* Ensure it's above any background patterns */
     }
     .hero-phone img {
-      max-width: 250px;
+      max-width: 300px; /* Increased size */
       height: auto;
       display: block;
     }
@@ -105,21 +113,21 @@
     /* SUBSTACK SECTION */
     .substack {
       text-align: center;
-      padding: 4rem 0;
+      padding: 5rem 0; /* Increased padding */
     }
     .substack h2 {
       font-family: 'AktivGrotesk-Bold', Arial, sans-serif;
-      font-size: 2.5rem;
+      font-size: 3rem; /* Increased size */
       color: var(--dark-blue);
       margin-bottom: 1.5rem;
     }
     .substack p {
-      font-size: 1.125rem;
+      font-size: 1.25rem; /* Slightly increased */
       margin: 0 auto 2rem;
       max-width: 700px;
     }
     .substack-logo {
-      margin-top: 1rem;
+      margin-top: 2rem; /* Increased */
     }
     .substack-logo img {
       max-width: 50px;
@@ -129,16 +137,16 @@
     .cta {
       text-align: center;
       background-color: #f5f5f3;
-      padding: 4rem 0;
+      padding: 5rem 0; /* Increased padding */
     }
     .cta h2 {
       font-family: 'AktivGrotesk-Bold', Arial, sans-serif;
-      font-size: 2.5rem;
+      font-size: 3rem; /* Increased size */
       color: var(--dark-blue);
       margin-bottom: 1.5rem;
     }
     .cta p {
-      font-size: 1.125rem;
+      font-size: 1.25rem; /* Slightly increased */
       margin: 0 auto 2rem;
       max-width: 700px;
     }
@@ -151,7 +159,7 @@
     }
     .footer-content {
       display: flex;
-      align-items: center;
+      align-items: flex-start; /* Changed to align-items: flex-start */
       justify-content: space-between;
     }
     .footer-left {
@@ -176,28 +184,84 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 991px) {
-      .hero-text h1 {
-        font-size: 3rem;
+    @media (max-width: 1200px) {
+      .hero-text {
+        padding-left: 6rem;
       }
-      .hero {
-        min-height: 500px;
+      .header-logo {
+        padding-left: 4rem;
       }
     }
-    @media (max-width: 767px) {
-      .container {
-        padding: 0 1rem;
+    
+    @media (max-width: 991px) {
+      .hero-text h1 {
+        font-size: 3.5rem;
       }
       .hero {
-        min-height: 400px;
+        min-height: 550px;
+      }
+      .hero-text {
+        padding-left: 4rem;
+      }
+      .header-logo {
+        padding-left: 2rem;
+      }
+      .hero-phone img {
+        max-width: 250px;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .hero {
+        min-height: 450px;
+        padding: 3rem 0;
+      }
+      .hero-text {
+        padding-left: 1.5rem;
+        max-width: 100%;
+      }
+      .hero-text h1 {
+        font-size: 2.75rem;
       }
       .hero-phone {
         right: 1rem;
       }
+      .hero-phone img {
+        max-width: 200px;
+      }
+      .header-logo {
+        padding-left: 1.5rem;
+      }
       .footer-content {
         flex-direction: column;
         gap: 2rem;
-        text-align: center;
+      }
+      .footer-social {
+        justify-content: flex-start; /* Keep aligned left on mobile */
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-text h1 {
+        font-size: 2.25rem;
+      }
+      .hero-text {
+        padding-left: 0;
+      }
+      .header-logo {
+        padding-left: 0;
+      }
+      .hero-phone img {
+        max-width: 150px;
+      }
+      .footer-content {
+        text-align: left; /* Keep text left-aligned */
+      }
+      .footer-social {
+        margin-top: 1.5rem;
       }
     }
   </style>
@@ -216,12 +280,14 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-text">
-      <h1>Know Thailand, in seconds.</h1>
-      <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
-    </div>
-    <div class="hero-phone">
-      <img src="images/phonepic.png" alt="Phone Screenshot">
+    <div class="container">
+      <div class="hero-text">
+        <h1>Know Thailand, in seconds.</h1>
+        <p>The English newsletter that keeps you current on top news in Thai business and tech. It's informative, fast, and free.</p>
+      </div>
+      <div class="hero-phone">
+        <img src="images/phonepic.png" alt="Phone Screenshot">
+      </div>
     </div>
   </section>
 
