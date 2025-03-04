@@ -13,26 +13,17 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif; /* Fallback font until AktivGrotesk is loaded */
-            color: #191c30; /* Dark blue brand color */
+            font-family: Arial, sans-serif;
+            color: #191c30;
             line-height: 1.6;
             background-color: #f5f5f3;
-        }
-
-        /* Custom font */
-        @font-face {
-            font-family: 'AktivGrotesk-Bold';
-            src: url('path-to-your-font/AktivGrotesk-Bold.woff2') format('woff2');
-            font-weight: bold;
-            font-style: normal;
-            font-display: swap;
         }
 
         /* Main container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 40px;
             position: relative;
         }
 
@@ -44,32 +35,28 @@
 
         /* Header */
         header {
-            padding: 2.5rem 0;
+            padding: 40px 0;
             background-color: #f5f5f3;
         }
 
         .header-logo {
-            display: flex;
-            align-items: center;
-            margin-left: 8rem; /* Adjust this to match your design's positioning */
+            padding-left: 40px;
         }
 
         .logo-text {
-            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
+            font-weight: bold;
+            font-size: 32px;
         }
 
         .logo-text .ta {
-            font-size: 1.25rem;
+            font-size: 20px;
             color: var(--red);
-            margin-right: 0.5rem;
+            margin-right: 8px;
         }
 
         .logo-text .thai {
             color: var(--red);
-            margin-right: 0.5rem;
+            margin-right: 8px;
         }
 
         .logo-text .alpha {
@@ -78,136 +65,90 @@
 
         /* Hero section */
         .hero {
-            position: relative;
+            padding: 60px 0 100px;
             background-color: #f5f5f3;
-            padding: 3rem 0 6rem;
-            overflow: hidden;
+            position: relative;
         }
 
         .hero-content {
             display: flex;
-            flex-direction: row;
-            align-items: flex-start; /* Changed from center to align at the top */
             justify-content: space-between;
-            position: relative;
-            z-index: 2;
         }
 
         .hero-text {
-            flex-basis: 45%;
-            margin-left: 8rem; /* Match your design's positioning */
-            padding-top: 2rem; /* Added to create better vertical alignment */
+            width: 50%;
+            padding-left: 40px;
         }
 
         .hero-image {
-            flex-basis: 40%;
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 4rem; /* Match the spacing in the design */
-            margin-top: 0; /* Adjust to match phone positioning */
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 40%;
+            text-align: center;
         }
 
         .hero h1 {
-            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
-            font-size: 4.5rem; /* Increased to match design */
+            font-size: 72px;
             line-height: 1.1;
-            margin-bottom: 2rem;
+            margin-bottom: 30px;
             color: var(--dark-blue);
+            font-weight: bold;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
+            font-size: 20px;
+            margin-bottom: 30px;
             max-width: 90%;
-            line-height: 1.5;
         }
 
-        /* Thai pattern background - positioned precisely */
-        .background-pattern {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('thai-pattern.png');
-            background-repeat: no-repeat;
-            background-position: 85% 20%; /* Adjusted to match exact position in design */
-            background-size: 45% auto; /* Adjusted to match size in design */
-            opacity: 0.15;
-            z-index: 1;
-        }
-
-        /* Beehiiv integration section */
         .newsletter-signup {
-            margin-top: 2rem;
-            min-height: 50px; /* Minimized height */
+            margin-top: 30px;
+            min-height: 50px;
         }
 
         /* Substack section */
         .substack {
-            padding: 4rem 0;
+            padding: 60px 0;
             text-align: center;
             background-color: white;
         }
 
         .substack h2 {
-            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
-            font-size: 3.5rem; /* Increased to match design */
-            margin-bottom: 1.5rem;
+            font-size: 56px;
+            margin-bottom: 24px;
             color: var(--dark-blue);
+            font-weight: bold;
         }
 
         .substack p {
-            font-size: 1.25rem;
-            margin: 0 auto 2rem;
+            font-size: 20px;
+            margin: 0 auto 30px;
             max-width: 800px;
-        }
-
-        .substack-logo {
-            margin-bottom: 1.5rem;
         }
 
         /* Second CTA section */
         .cta {
             background-color: #f5f5f3;
-            padding: 4rem 0;
+            padding: 60px 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         .cta h2 {
-            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 56px;
+            margin-bottom: 24px;
             color: var(--dark-blue);
+            font-weight: bold;
         }
 
         .cta p {
-            font-size: 1.25rem;
-            margin: 0 auto 2rem;
+            font-size: 20px;
+            margin: 0 auto 30px;
             max-width: 800px;
-        }
-
-        .cta .newsletter-signup {
-            max-width: 500px;
-            margin: 2rem auto 0;
-            position: relative;
-            z-index: 2;
         }
 
         /* Footer */
         footer {
             background-color: var(--dark-blue);
             color: white;
-            padding: 3rem 0;
+            padding: 50px 0;
         }
 
         .footer-content {
@@ -217,123 +158,75 @@
         }
 
         .footer-logo {
-            display: flex;
-            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
         }
 
-        .footer-logo-text {
-            font-family: 'AktivGrotesk-Bold', 'Arial', sans-serif;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .footer-logo-text .ta {
-            font-size: 1rem;
-            margin-right: 0.5rem;
+        .footer-logo .ta {
+            font-size: 16px;
+            margin-right: 8px;
         }
 
         .footer-info {
-            margin-top: 1rem;
-            font-size: 0.875rem;
+            margin-top: 16px;
+            font-size: 14px;
         }
 
         .footer-info p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
         }
 
         .footer-social {
             display: flex;
-            gap: 1rem;
+            gap: 16px;
         }
 
         .social-icon {
             width: 24px;
             height: 24px;
-            color: white;
         }
 
         /* Responsive design */
-        @media (max-width: 1200px) {
-            .header-logo, .hero-text {
-                margin-left: 4rem;
-            }
-            
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-            
-            .hero-image {
-                padding-right: 2rem;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .header-logo, .hero-text {
-                margin-left: 2rem;
-            }
-            
-            .hero h1 {
-                font-size: 3rem;
-            }
-
+        @media (max-width: 992px) {
             .hero-content {
                 flex-direction: column;
-                align-items: flex-start;
             }
 
-            .hero-text {
-                flex-basis: 100%;
-                margin-right: 0;
-                margin-bottom: 3rem;
-                max-width: 80%;
+            .hero-text, .hero-image {
+                width: 100%;
+                padding-left: 0;
             }
 
             .hero-image {
-                flex-basis: 100%;
-                justify-content: center;
-                padding-right: 0;
-                width: 100%;
-            }
-            
-            .hero-image img {
-                max-width: 80%;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-            
-            .header-logo, .hero-text {
-                margin-left: 0;
+                margin-top: 40px;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .header-logo {
+                padding-left: 0;
             }
             
             .hero-text {
-                max-width: 100%;
-            }
-            
-            .hero-image img {
-                max-width: 100%;
+                padding-left: 0;
             }
 
             .footer-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 2rem;
-            }
-
-            .footer-logo {
-                justify-content: center;
             }
 
             .footer-social {
+                margin-top: 30px;
                 justify-content: center;
-                margin-top: 1rem;
             }
         }
     </style>
@@ -344,7 +237,7 @@
         <div class="container">
             <div class="header-logo">
                 <div class="logo-text">
-                    <span class="ta">τα</span> <span class="thai">THAI</span> <span class="alpha">ALPHA</span>
+                    <span class="ta">τα</span><span class="thai">THAI</span><span class="alpha">ALPHA</span>
                 </div>
             </div>
         </div>
@@ -352,9 +245,6 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <!-- Thai pattern background -->
-        <div class="background-pattern"></div>
-        
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -368,7 +258,7 @@
                 </div>
                 
                 <div class="hero-image">
-                    <img src="newsletter-mobile.png" alt="Thai Alpha newsletter on mobile phone showing news stories about Thai economy and startups" />
+                    <!-- Image will be added here -->
                 </div>
             </div>
         </div>
@@ -379,12 +269,6 @@
         <div class="container">
             <h2>Check out our Substack</h2>
             <p>Helpful English guides to Thai economic landscape, economy, startups, some bullshit.</p>
-            <div class="substack-logo">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40" height="40" rx="4" fill="#191c30"/>
-                    <path d="M12 13H28M12 19H28M12 25H20" stroke="white" stroke-width="2"/>
-                </svg>
-            </div>
         </div>
     </section>
 
@@ -407,9 +291,7 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <div class="footer-logo">
-                        <div class="footer-logo-text">
-                            <span class="ta">τα</span> THAI ALPHA
-                        </div>
+                        <span class="ta">τα</span> THAI ALPHA
                     </div>
                     <div class="footer-info">
                         <p>Thai Alpha || Bangkok || Singapore</p>
@@ -419,35 +301,12 @@
                 </div>
                 
                 <div class="footer-social">
-                    <a href="https://thaialpha.substack.com" aria-label="Substack">
-                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="24" height="24" rx="4" fill="white"/>
-                            <path d="M6 8H18M6 12H18M6 16H12" stroke="#191c30" stroke-width="2"/>
-                        </svg>
-                    </a>
-                    <a href="https://twitter.com/xthaialpha" aria-label="Twitter/X">
-                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" fill="white"/>
-                        </svg>
-                    </a>
-                    <a href="https://linkedin.com/company/thai-alpha" aria-label="LinkedIn">
-                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" fill="white"/>
-                            <rect x="2" y="9" width="4" height="12" fill="white"/>
-                            <circle cx="4" cy="4" r="2" fill="white"/>
-                        </svg>
-                    </a>
+                    <!-- Social icons would go here -->
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Note: Replace newsletter-mobile.png and thai-pattern.png with your actual image files -->
-    <!-- Then add the Beehiiv embed code in the newsletter-signup divs when ready -->
 </body>
 </html>
-
-
-
 
 
